@@ -1,0 +1,91 @@
+.navbar {
+    height: 100vh;
+    width: 8rem;
+
+    position: fixed;
+    // top: 0;
+    // left: 0;
+    // removing these "top" and "left" properties works fine and makes mobile version development much easier
+    z-index: 10;
+
+    background-color: $secondary-color;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 3px 5px 5px rgba(0,0,0,0.3);
+
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in-out;
+
+    &.active {
+        transform: translateX(0);
+    }
+
+
+    /* 
+    When the "navbar" is "hidden" then the "bars" will be displayed "block", and "times" will be "none"
+    When the "navbar" is "active" then the "bars" will be displayed "none", and "times" will be "block"
+    */
+
+    &.active .toggle-btn .fa-times {
+        display: block;
+    }
+
+    &.active .toggle-btn .fa-bars {
+        display: none;
+    }
+
+    .toggle-btn {
+        border: 0;
+        padding: 0.5rem;
+        background-color: $secondary-color;
+        box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.5);
+     
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+
+        .fa-bars,.fa-times {
+            font-size: 1.75rem;
+            cursor: pointer;
+            border: 0;
+            color: $primary-color;
+            background-color: $secondary-color;
+            width: 2rem;
+        }
+        
+        .fa-bars {
+            display: block;
+        }
+
+        .fa-times {
+            display: none;
+        }        
+        
+    }
+
+
+    .navbar-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    
+        li:hover a{
+            transform: translateY(0.5rem);
+            color: $primary-color;
+        }
+    
+        a {
+            width: 100%;
+            color: $primary-color;
+            display: block;
+            font-size: 1.1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            
+            box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
+            transition: all 150ms ease-in-out;   
+        }
+    }
+}

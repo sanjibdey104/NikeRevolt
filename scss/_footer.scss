@@ -1,0 +1,29 @@
+footer {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    color: $primary-color;
+
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    align-items: center;
+
+    .social-links {
+        a {
+            text-decoration: none;
+            color: $primary-color;
+            transition: all 150ms ease-in;
+
+            &:hover {
+                opacity: 0.75;
+                transform: scale(1.2);
+            }
+        }
+
+        display: flex;
+        justify-content: space-around;
+    }
+
+    
+}
+

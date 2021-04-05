@@ -1,0 +1,863 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  line-height: 1.3;
+  font-family: "Poppins", sans-serif;
+  background-color: #f1faee;
+}
+
+.navbar {
+  height: 100vh;
+  width: 8rem;
+  position: fixed;
+  z-index: 10;
+  background-color: #f1faee;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  /* 
+    When the "navbar" is "hidden" then the "bars" will be displayed "block", and "times" will be "none"
+    When the "navbar" is "active" then the "bars" will be displayed "none", and "times" will be "block"
+    */
+}
+
+.navbar.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.navbar.active .toggle-btn .fa-times {
+  display: block;
+}
+
+.navbar.active .toggle-btn .fa-bars {
+  display: none;
+}
+
+.navbar .toggle-btn {
+  border: 0;
+  padding: 0.5rem;
+  background-color: #f1faee;
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.navbar .toggle-btn .fa-bars, .navbar .toggle-btn .fa-times {
+  font-size: 1.75rem;
+  cursor: pointer;
+  border: 0;
+  color: #cd061d;
+  background-color: #f1faee;
+  width: 2rem;
+}
+
+.navbar .toggle-btn .fa-bars {
+  display: block;
+}
+
+.navbar .toggle-btn .fa-times {
+  display: none;
+}
+
+.navbar .navbar-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+}
+
+.navbar .navbar-list li:hover a {
+  -webkit-transform: translateY(0.5rem);
+          transform: translateY(0.5rem);
+  color: #cd061d;
+}
+
+.navbar .navbar-list a {
+  width: 100%;
+  color: #cd061d;
+  display: block;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+.container {
+  max-width: 80%;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 0;
+}
+
+.container .product-image-top {
+  max-width: 90%;
+  height: 40rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  position: relative;
+  background: url("../images/nike-revolt-top.jpg") no-repeat center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.container .product-image-top h2 {
+  width: 5rem;
+  font-size: 2.5rem;
+  color: #f1faee;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.container .product-image-top .buy-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cd061d;
+  position: -webkit-sticky;
+  position: sticky;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  -webkit-box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+          box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
+.container .product-image-top .attribution {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  -webkit-transform: translateX(4rem) rotateZ(90deg);
+          transform: translateX(4rem) rotateZ(90deg);
+  color: #f1faee;
+}
+
+.container .product-image-top .attribution a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #f1faee;
+}
+
+.container .container-body {
+  color: #cd061d;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.container .container-body .product-intro-head {
+  margin-bottom: 4rem;
+}
+
+.container .container-body .product-intro-head h1 {
+  font-size: 3.5rem;
+}
+
+.container .container-body .product-intro-head h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.container .container-body p {
+  margin-bottom: 5rem;
+}
+
+.container .container-body article {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.container .container-body article h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.container .container-body article .article-part-one,
+.container .container-body article .article-part-two {
+  padding-left: 1rem;
+  border-left: 0.3rem solid #cd061d;
+}
+
+.container .container-body .product-image-bottom {
+  max-width: 100%;
+  height: 30rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  position: relative;
+  background: url("../images/nike-revolt-bottom.jpg") no-repeat center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.container .container-body .product-image-bottom h2 {
+  width: 5rem;
+  font-size: 2.5rem;
+  color: #f1faee;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.container .container-body .product-image-bottom .buy-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cd061d;
+  position: -webkit-sticky;
+  position: sticky;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  -webkit-box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+          box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
+.container .container-body .product-image-bottom .attribution {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  -webkit-transform: translateX(4.5rem) rotateZ(90deg);
+          transform: translateX(4.5rem) rotateZ(90deg);
+  color: #f1faee;
+}
+
+.container .container-body .product-image-bottom .attribution a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #f1faee;
+}
+
+.reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 5rem;
+}
+
+.reviews h2.reviews-header {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.reviews .review-card {
+  width: 30rem;
+  height: 15rem;
+  border-right: 0.3rem solid #cd061d;
+  border-bottom: 0.3rem solid #cd061d;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #cd061d;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+footer {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  color: #cd061d;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10rem 1fr;
+      grid-template-columns: 10rem 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer .social-links a {
+  text-decoration: none;
+  color: #cd061d;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+footer .social-links a:hover {
+  opacity: 0.75;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  nav.navbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    height: 3rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  }
+  nav.navbar.active {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  nav.navbar.active .toggle-btn .fa-times {
+    display: block;
+  }
+  nav.navbar.active .toggle-btn .fa-bars {
+    display: none;
+  }
+  nav.navbar .toggle-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  nav.navbar .toggle-btn .fa-bars, nav.navbar .toggle-btn .fa-times {
+    font-size: 1.75rem;
+    cursor: pointer;
+    border: 0;
+    color: #cd061d;
+    background-color: #f1faee;
+    width: 2rem;
+  }
+  nav.navbar .toggle-btn .fa-bars {
+    display: block;
+  }
+  nav.navbar .toggle-btn .fa-times {
+    display: none;
+  }
+  nav.navbar .navbar-list {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 5rem;
+  }
+  nav.navbar .navbar-list li:hover a {
+    -webkit-transform: none;
+            transform: none;
+  }
+  nav.navbar .navbar-list a {
+    font-size: 1.2rem;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  nav.navbar .navbar-list a:focus {
+    border-bottom: 2px solid #cd061d;
+  }
+  .container {
+    max-width: 90%;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0.75rem 0;
+  }
+  .container .product-image-top {
+    position: relative;
+    height: 25rem;
+    margin-bottom: 2rem;
+    background: url("../images/nike-revolt-top.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .container .product-image-top h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: #f1faee;
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+    margin-bottom: 2rem;
+    text-shadow: none;
+  }
+  .container .product-image-top .buy-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #cd061d;
+    position: static;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  .container .product-image-top .attribution {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 4rem;
+    right: 1rem;
+    color: #f1faee;
+  }
+  .container .product-image-top .attribution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #f1faee;
+  }
+  .container .container-body {
+    color: #cd061d;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .container .container-body .product-intro-head {
+    margin-bottom: 2rem;
+  }
+  .container .container-body .product-intro-head h1 {
+    font-size: 2.75rem;
+  }
+  .container .container-body .product-intro-head h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .container .container-body p {
+    margin-bottom: 5rem;
+  }
+  .container .container-body article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+  .container .container-body article h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    width: 3rem;
+  }
+  .container .container-body article .article-part-one,
+  .container .container-body article .article-part-two {
+    height: 8rem;
+    padding-left: 1rem;
+    border-left: 0.3rem solid #cd061d;
+  }
+  .container .container-body .product-image-bottom {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    background: url("../images/nike-revolt-bottom.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .container .container-body .product-image-bottom h2 {
+    width: 100%;
+    font-size: 1.2rem;
+    color: #f1faee;
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+    margin-bottom: 1rem;
+    text-shadow: none;
+  }
+  .container .container-body .product-image-bottom .buy-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #cd061d;
+    position: static;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  .container .container-body .product-image-bottom .attribution {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 4.5rem;
+    color: #f1faee;
+    -webkit-transform: translateX(3.1rem) rotateZ(0);
+            transform: translateX(3.1rem) rotateZ(0);
+  }
+  .container .container-body .product-image-bottom .attribution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #f1faee;
+  }
+  .container .container-body .reviews {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    gap: 1.2rem;
+    margin-bottom: 5rem;
+  }
+  .container .container-body .reviews h2.reviews-header {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  .container .container-body .reviews .review-card {
+    width: 30rem;
+    height: 10rem;
+  }
+  footer {
+    max-width: 90%;
+    display: -ms-grid;
+    display: grid;
+    gap: 1rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  footer .social-links a {
+    text-decoration: none;
+    color: #cd061d;
+    -webkit-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+  }
+  footer .social-links a:hover {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav.navbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    height: 3rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  }
+  nav.navbar.active {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  nav.navbar.active .toggle-btn .fa-times {
+    display: block;
+  }
+  nav.navbar.active .toggle-btn .fa-bars {
+    display: none;
+  }
+  nav.navbar .toggle-btn {
+    border: 0;
+    padding: 0.5rem;
+    background-color: #f1faee;
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  nav.navbar .toggle-btn .fa-bars, nav.navbar .toggle-btn .fa-times {
+    font-size: 1.75rem;
+    cursor: pointer;
+    border: 0;
+    color: #cd061d;
+    background-color: #f1faee;
+    width: 2rem;
+  }
+  nav.navbar .toggle-btn .fa-bars {
+    display: block;
+  }
+  nav.navbar .toggle-btn .fa-times {
+    display: none;
+  }
+  nav.navbar .navbar-list {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 2rem;
+  }
+  nav.navbar .navbar-list li:hover a {
+    -webkit-transform: none;
+            transform: none;
+  }
+  nav.navbar .navbar-list a {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  nav.navbar .navbar-list a:focus {
+    border-bottom: 2px solid #cd061d;
+  }
+  .container {
+    max-width: 90%;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0.75rem 0;
+  }
+  .container .product-image-top {
+    position: relative;
+    height: 20rem;
+    margin-bottom: 2rem;
+    background: url("../images/nike-revolt-top.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .container .product-image-top h2 {
+    width: 100%;
+    font-size: 1.2rem;
+    color: #f1faee;
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+    margin-bottom: 1rem;
+    text-shadow: none;
+  }
+  .container .product-image-top .buy-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #cd061d;
+    position: static;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  .container .product-image-top .attribution {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 4rem;
+    right: 1rem;
+    color: #f1faee;
+  }
+  .container .product-image-top .attribution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #f1faee;
+  }
+  .container .container-body {
+    color: #cd061d;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .container .container-body .product-intro-head {
+    margin-bottom: 2rem;
+  }
+  .container .container-body .product-intro-head h1 {
+    font-size: 2.5rem;
+  }
+  .container .container-body .product-intro-head h2 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .container .container-body p {
+    margin-bottom: 5rem;
+  }
+  .container .container-body article {
+    max-width: 80%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+  .container .container-body article h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    width: 3rem;
+  }
+  .container .container-body article .article-part-one,
+  .container .container-body article .article-part-two {
+    height: 8rem;
+    padding-left: 1rem;
+    border-left: 0.3rem solid #cd061d;
+  }
+  .container .container-body .product-image-bottom {
+    position: relative;
+    height: 18rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    background: url("../images/nike-revolt-bottom.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .container .container-body .product-image-bottom h2 {
+    width: 100%;
+    font-size: 1.2rem;
+    color: #f1faee;
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+    margin-bottom: 1rem;
+    text-shadow: none;
+  }
+  .container .container-body .product-image-bottom .buy-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #cd061d;
+    position: static;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 7px 7px 5px -5px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem);
+  }
+  .container .container-body .product-image-bottom .attribution {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 4.5rem;
+    color: #f1faee;
+    -webkit-transform: translateX(3.5rem) rotateZ(0);
+            transform: translateX(3.5rem) rotateZ(0);
+  }
+  .container .container-body .product-image-bottom .attribution a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #f1faee;
+  }
+  .container .container-body .reviews h2.reviews-header {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  .container .container-body .reviews .review-card {
+    width: 30rem;
+    height: 10rem;
+  }
+  footer {
+    max-width: 90%;
+    display: -ms-grid;
+    display: grid;
+    gap: 1rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  footer .social-links a {
+    text-decoration: none;
+    color: #cd061d;
+    -webkit-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+  }
+  footer .social-links a:hover {
+    opacity: 0.75;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+$primary-color: #cd061d;
+$secondary-color: #f1faee;
+$primary-font: 'Poppins', sans-serif;
+
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,*::before,*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    line-height: 1.3;
+    font-family: $primary-font;
+    background-color: $secondary-color;
+}

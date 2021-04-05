@@ -1,0 +1,287 @@
+@media screen and (max-width: 768px) {
+
+    nav.navbar {
+
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+
+        height: 3rem;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 5px 5px rgba(0,0,0,0.3);
+    
+        transform: translateY(100%);
+        transition: transform 300ms ease-in-out;
+
+        &.active {
+            transform: translateY(0);
+        }
+    
+        &.active .toggle-btn .fa-times {
+            display: block;
+        }
+    
+        &.active .toggle-btn .fa-bars {
+            display: none;
+        }
+    
+        .toggle-btn {
+            border: 0;
+            padding: 0.5rem;
+            background-color: $secondary-color;
+            box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.5);
+         
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateY(-100%);
+    
+            .fa-bars,.fa-times {
+                font-size: 1.75rem;
+                cursor: pointer;
+                border: 0;
+                color: $primary-color;
+                background-color: $secondary-color;
+                width: 2rem;
+            }
+            
+            .fa-bars {
+                display: block;
+            }
+    
+            .fa-times {
+                display: none;
+            }        
+            
+        }
+    
+    
+        .navbar-list {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        
+            li:hover a{
+                transform: none;
+            }
+
+            a {
+                box-shadow: none;
+                transition: none;
+                
+                &:focus {
+                    border-bottom: 2px solid $primary-color;
+                }
+            }
+        }
+
+
+    }
+
+
+    .container {
+        max-width: 90%;
+        min-height: 100%;
+        margin: 0 auto;
+        padding: 0.75rem 0;
+    
+    
+        // PRODUCT IMAGE
+        .product-image-top{
+            position: relative;
+            height: 20rem;
+            margin-bottom: 2rem;
+
+            background: url('../images/nike-revolt-top.jpg') no-repeat center;
+            background-size: cover;
+            background-attachment: scroll;
+    
+            h2 {
+                width: 100%;
+                font-size: 1.2rem;
+                color: $secondary-color;
+                transform: translateY(1rem);
+                margin-bottom: 1rem;
+                text-shadow: none;
+            }
+    
+            .buy-btn {
+                font-family: $primary-font;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: $primary-color;
+                position: static;
+    
+                border: 0;
+                padding: 0.5rem;
+                cursor: pointer;
+                box-shadow: 7px 7px 5px -5px rgba(0,0,0,0.5);
+                transform: translateX(-1rem);
+            }
+            
+            .attribution {
+                font-size: 0.5rem;
+                position: absolute;
+                bottom: 4rem;
+                right: 1rem;
+                color: $secondary-color;
+
+                a {
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: $secondary-color;
+                }
+            }
+            
+        }
+    
+    
+        // CONTAINER BODY
+        .container-body {
+            color: $primary-color;
+            max-width: 90%;
+            margin: 0 auto;
+        
+        
+            // PRODUCT INTRO HEAD
+            .product-intro-head {
+                margin-bottom: 2rem;
+        
+                h1 {
+                    font-size: 2.5rem;
+                }
+        
+                h2 {
+                    font-size: 1.3rem;
+                    margin-bottom: 2rem;
+                }
+            }
+                
+            // PARA
+            p {
+                margin-bottom: 5rem;
+            }
+              
+            // ARTICLE SECTION
+            article {
+                max-width: 80%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-bottom: 4rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                    width: 3rem;
+                }
+                
+                .article-part-one, 
+                .article-part-two {
+                    height: 8rem;
+                    padding-left: 1rem;
+                    border-left: 0.3rem solid $primary-color;
+                }
+                
+            }
+
+
+            .product-image-bottom{
+                position: relative;
+                height: 18rem;
+                width: 100%;
+                margin-bottom: 2rem;
+    
+                background: url('../images/nike-revolt-bottom.jpg') no-repeat center;
+                background-size: cover;
+                background-attachment: scroll;
+        
+                h2 {
+                    width: 100%;
+                    font-size: 1.2rem;
+                    color: $secondary-color;
+                    transform: translateY(1rem);
+                    margin-bottom: 1rem;
+                    text-shadow: none;
+                }
+        
+                .buy-btn {
+                    font-family: $primary-font;
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    color: $primary-color;
+                    position: static;
+        
+                    border: 0;
+                    padding: 0.5rem;
+                    cursor: pointer;
+                    box-shadow: 7px 7px 5px -5px rgba(0,0,0,0.5);
+                    transform: translateX(-1rem);
+                }
+                
+                .attribution {
+                    font-size: 0.5rem;
+                    position: absolute;
+                    bottom: 0.5rem;
+                    right: 4.5rem;
+                    color: $secondary-color;
+                    transform: translateX(3.5rem) rotateZ(0);
+    
+                    a {
+                        text-decoration: none;
+                        font-weight: 600;
+                        color: $secondary-color;
+                    }
+                }
+                
+            }
+
+
+            // REVIEWS
+            .reviews {
+            
+                h2.reviews-header {
+                    font-size: 1.2rem;
+                    margin-bottom: 3rem;
+                }
+            
+                .review-card {
+                    width: 30rem;
+                    height: 10rem;
+                }
+            }
+            
+        }
+    }
+
+
+    footer {
+        max-width: 90%;
+    
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    
+        .social-links {
+            a {
+                text-decoration: none;
+                color: $primary-color;
+                transition: all 150ms ease-in;
+    
+                &:hover {
+                    opacity: 0.75;
+                    transform: scale(1.2);
+                }
+            }
+        }
+       
+    }  
+    
+}
