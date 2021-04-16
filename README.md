@@ -1,2 +1,2 @@
 # NikeRevolt
-Landing Page for Nike Revolution Products
+Dummy landing Page for Nike Revolution Product
